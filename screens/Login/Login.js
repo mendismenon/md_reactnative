@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import TextIpt from "../../common/Elements/TextInput/TextIpt";
 import ButtonCmp from "../../common/Elements/CustomButton/ButtonCmp";
 
-const Login  = () => {
+const Login  = (props) => {
 
     const [loginCredentials, setLoginCredentials] = useState({
         userName: '',
@@ -49,7 +49,8 @@ const Login  = () => {
                             value={loginCredentials.password}
                             secureTextEntry={true}
                         />
-                        <Text style={LoginStyles.forgotPasswordStyle}> 
+                        <Text style={LoginStyles.forgotPasswordStyle} 
+                            onPress={()=>props.navigation.navigate('Forgot Password')}> 
                             Forgot Password?
                         </Text>
                         <ButtonCmp buttonText={'Sign In'} /> 

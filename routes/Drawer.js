@@ -4,9 +4,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeStack from './HomeStack';
 import AboutStack from './AboutStack';
 import Login from '../screens/Login/Login';
+import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
+import { Image, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import LoginStyles from '../screens/Login/LoginStyles';
+import HeaderBack from '../common/Elements/HeaderBack/HeaderBack';
 const DrawerNavigation = createDrawerNavigator();
 
-export default function Drawer() {
+export default function Drawer () {
+  // const navigation = useNavigation();
     return (
       <NavigationContainer>
         <DrawerNavigation.Navigator initialRouteName="Home">
@@ -21,6 +27,20 @@ export default function Drawer() {
               headerTitleStyle: {
                 color: "#007AFF"
                },}}
+          />
+          <DrawerNavigation.Screen
+            name="Forgot Password"             
+            component={ForgotPassword} 
+            options={({navigation})=>({headerShown:true,
+              headerLeft: ()=>(
+                <HeaderBack navigation={navigation}/>
+              ),
+              headerStyle: {
+              backgroundColor: "#D6EAF8"
+              },
+              headerTitleStyle: {
+                color: "#007AFF"
+               },})}
           />
           <DrawerNavigation.Screen 
             name="Home Drawer" 
