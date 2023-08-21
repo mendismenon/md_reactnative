@@ -14,7 +14,7 @@ const CustomBtnStyles= StyleSheet.create({
         fontWeight: 'bold',        
         fontSize: 16,
         textAlign: 'center',
-        width: '100%'
+        width: '100%',
     }
 });
 

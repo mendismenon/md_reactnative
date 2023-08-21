@@ -5,6 +5,7 @@ import HomeStack from './HomeStack';
 import AboutStack from './AboutStack';
 import Login from '../screens/Login/Login';
 import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
+import Register from '../screens/Register/Register';
 import { Image, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import LoginStyles from '../screens/Login/LoginStyles';
@@ -31,7 +32,21 @@ export default function Drawer () {
           <DrawerNavigation.Screen
             name="Forgot Password"             
             component={ForgotPassword} 
-            options={({navigation})=>({headerShown:true,
+            options={({navigation})=>({headerShown:true, unmountOnBlur:true,
+              headerLeft: ()=>(
+                <HeaderBack navigation={navigation}/>
+              ),
+              headerStyle: {
+              backgroundColor: "#D6EAF8"
+              },
+              headerTitleStyle: {
+                color: "#007AFF"
+               },})}
+          />
+          <DrawerNavigation.Screen
+            name="Register"             
+            component={Register} 
+            options={({navigation})=>({headerShown:true, unmountOnBlur:true,
               headerLeft: ()=>(
                 <HeaderBack navigation={navigation}/>
               ),

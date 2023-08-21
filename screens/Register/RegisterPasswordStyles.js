@@ -1,11 +1,18 @@
 import { StyleSheet} from "react-native";
 
 
-const ForgotPasswordStyles= StyleSheet.create({
+const RegisterPasswordStyles= StyleSheet.create({
     loginImage: {
-        width: '80%',
-        height: '50%',
-        borderRadius: 500,        
+        // width: '10%',
+        // height: '10%',
+        borderRadius: 500, 
+        position: 'relative'       
+    },
+    loginImageCls: {
+        width: 150,
+        height: 150,
+        // borderRadius: 500, 
+        // position: 'relative'
     },
     viewImgPrnt: {
         backgroundColor: 'white',
@@ -34,7 +41,6 @@ const ForgotPasswordStyles= StyleSheet.create({
     formFieldsPrnt: {
         width:'100%',
         margin: 'auto',
-        // flex: 1, 
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 40,
@@ -42,4 +48,4 @@ const ForgotPasswordStyles= StyleSheet.create({
     },
 });
 
-export default ForgotPasswordStyles;
+export default RegisterPasswordStyles;

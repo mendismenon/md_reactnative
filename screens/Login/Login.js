@@ -30,7 +30,7 @@ const Login  = (props) => {
                 <View style={LoginStyles.viewImgPrnt}>
                 <Image 
                     style={LoginStyles.loginImage} 
-                    source={require('../../assets/MD_Pic.jpg')}/>
+                    source={require('../../assets/md_pic.jpg')}/>
                     <Text style={LoginStyles.memberLgnTxt}>
                         Member Login
                     </Text>                    
@@ -50,7 +50,9 @@ const Login  = (props) => {
                             secureTextEntry={true}
                         />
                         <Text style={LoginStyles.forgotPasswordStyle} 
-                            onPress={()=>props.navigation.navigate('Forgot Password')}> 
+                            onPress={()=>props.navigation.navigate('Forgot Password',{
+                                step: 1
+                            })}> 
                             Forgot Password?
                         </Text>
                         <ButtonCmp buttonText={'Sign In'} /> 
@@ -58,7 +60,8 @@ const Login  = (props) => {
                             <Text style={{paddingTop:10, paddingRight:10}}> 
                                Don't have an account?
                             </Text>
-                            <Text style={LoginStyles.forgotPasswordStyle}> 
+                            <Text style={LoginStyles.forgotPasswordStyle}
+                                onPress={()=>props.navigation.navigate('Register')}> 
                                Sign Up
                             </Text>
                         </View>                      
